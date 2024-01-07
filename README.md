@@ -47,6 +47,7 @@ But soon, Ukranian and English will be added for the interface, wake-word detect
 
     cd app
     bash helpers/get-deps.bash
+    bash helpers/get-vosk-models.bash
     cargo build
     cargo run jarvis-app
     target/debug/jarvis-app.exe
