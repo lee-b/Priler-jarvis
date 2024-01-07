@@ -27,3 +27,6 @@ psd
 *.lib
 *.a
 *.so
+
+*.zip
+
