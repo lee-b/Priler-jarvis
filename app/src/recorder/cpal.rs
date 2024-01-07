@@ -80,16 +80,6 @@ pub fn init_microphone(device_index: i32, frame_length: u32) -> bool {
 }
 
 fn create_stream(device: Device, frame_length: u32) -> Stream {
-    // get default input stream config
-    // let default_config = device.default_input_config().unwrap();
-
-    // create config for the stream
-    // let config: StreamConfig = StreamConfig {
-    //     channels: default_config.channels(),
-    //     sample_rate: SampleRate(16000),
-    //     buffer_size: BufferSize::Fixed(frame_length)
-    // };
-
     let config = device
         .default_input_config()
         .expect("Failed to load default input config");
