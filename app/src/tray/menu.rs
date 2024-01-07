@@ -7,9 +7,9 @@ pub enum TrayMenuItem {
 impl TrayMenuItem {
     pub fn label(&self) -> &str {
         match *self {
-            TrayMenuItem::Restart => "Перезапустить",
-            TrayMenuItem::Settings => "Настройки",
-            TrayMenuItem::Exit => "Выход"
+            TrayMenuItem::Restart => "Restart",
+            TrayMenuItem::Settings => "Settings",
+            TrayMenuItem::Exit => "Exit"
         }
     }
 }

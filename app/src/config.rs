@@ -110,7 +110,7 @@ pub const DEFAULT_KEYWORD: &str = "jarvis_windows.ppn";
 pub const DEFAULT_SENSITIVITY: f32 = 1.0;
 
 // VOSK
-pub const VOSK_FETCH_PHRASE: &str = "джарвис";
+pub const VOSK_FETCH_PHRASE: &str = "Jarvis";
 pub const VOSK_MODEL_PATH: &str = "vosk/vosk-model-small-en-us-0.15";
 pub const VOSK_MIN_RATIO: f64 = 70.0;
 
@@ -123,21 +123,21 @@ pub const ASSISTANT_GREET_PHRASES: [&str; 1] = [
 ];
 
 pub const ASSISTANT_PHRASES_TBR: [&str; 17] = [
-    "джарвис",
-    "сэр",
-    "слушаю сэр",
-    "всегда к услугам",
-    "произнеси",
-    "ответь",
-    "покажи",
-    "скажи",
-    "давай",
-    "да сэр",
-    "к вашим услугам сэр",
-    "всегда к вашим услугам сэр",
-    "запрос выполнен сэр",
-    "выполнен сэр",
-    "есть",
-    "загружаю сэр",
-    "очень тонкое замечание сэр",
+    "jarvis",
+    "sir",
+    "listening, sir",
+    "at your service",
+    "speak",
+    "reply",
+    "show",
+    "tell",
+    "let's",
+    "yes, sir",
+    "at your service, sir",
+    "always at your service, sir",
+    "request executed, sir",
+    "executed, sir",
+    "affirmative",
+    "loading, sir",
+    "very subtle remark, sir",
 ];
