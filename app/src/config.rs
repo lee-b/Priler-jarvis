@@ -62,7 +62,7 @@ pub const DEFAULT_SPEECH_TO_TEXT_ENGINE: SpeechToTextEngine = SpeechToTextEngine
 
 pub const DEFAULT_VOICE: &str = "jarvis-og";
 
-pub const BUNDLE_IDENTIFIER: &str = "com.priler.jarvis";
+pub const BUNDLE_IDENTIFIER: &str = "com.lee-b.jarvis";
 pub const DB_FILE_NAME: &str = "app.db";
 pub const LOG_FILE_NAME: &str = "log.txt";
 pub const APP_VERSION: Option<&str> = option_env!("CARGO_PKG_VERSION");
