@@ -93,8 +93,7 @@
 <Space h="xl" />
 
 <Notification title='BETA version!' icon={QuestionMarkCircled} color='blue' withCloseButton={false}>
-  Some features may not work correctly.<br />
-  Report all found bugs to <a href="{feedback_link}" target="_blank">our Telegram bot</a>.
+  Work in progress! Some features may not work correctly.<br />
   <Space h="sm" />
   <Button color="gray" radius="md" size="xs" uppercase on:click={() => {showInExplorer(log_file_path)}}>Open log folder</Button>
 </Notification>
