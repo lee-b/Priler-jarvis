@@ -43,19 +43,21 @@ But soon, Ukranian and English will be added for the interface, wake-word detect
 
 ## How to build?
 
-First, install dependencies (to do).
-
 ### app
 
     cd app
+    bash helpers/get-deps.bash
     cargo build
     cargo run jarvis-app
+    target/debug/jarvis-app.exe
+    cargo install
 
 ### gui
 
     cd gui
     npm install
-    npm run
+    npm install --save-exact --save-dev esbuild
+    npm run dev
 
 ## Author
 
