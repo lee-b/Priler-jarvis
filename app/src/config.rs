@@ -67,9 +67,6 @@ pub const DB_FILE_NAME: &str = "app.db";
 pub const LOG_FILE_NAME: &str = "log.txt";
 pub const APP_VERSION: Option<&str> = option_env!("CARGO_PKG_VERSION");
 pub const AUTHOR_NAME: Option<&str> = option_env!("CARGO_PKG_AUTHORS");
-pub const REPOSITORY_LINK: Option<&str> = option_env!("CARGO_PKG_REPOSITORY");
-pub const TG_OFFICIAL_LINK: Option<&str> = Some("https://t.me/howdyho_official");
-pub const FEEDBACK_LINK: Option<&str> = Some("https://t.me/jarvis_feedback_bot");
 
 /*
     Tray.
