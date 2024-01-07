@@ -58,7 +58,7 @@
       save_button_disabled = false; // enable save button again
     }, 1000);
 
-    // restart listening everytime new settings is saved
+    // restart listening every time new settings are saved
     stopListening(() => {
       startListening();
     });
@@ -67,7 +67,7 @@
   // CODE
   onMount(async () => {
     // preload some vars
-    let _available_microphones: Array<Number> = await invoke("pv_get_audio_devices");
+    let _available_microphones = await invoke("pv_get_audio_devices");
     Object.entries(_available_microphones).forEach(entry => {
       const [k, v] = entry;
       
@@ -92,84 +92,84 @@
 
 <Space h="xl" />
 
-<Notification title='БЕТА версия!' icon={QuestionMarkCircled} color='blue' withCloseButton={false}>
-  Часть функций может работать некорректно.<br />
-  Сообщайте обо всех найденных багах в <a href="{feedback_link}" target="_blank">наш телеграм бот</a>.
+<Notification title='BETA version!' icon={QuestionMarkCircled} color='blue' withCloseButton={false}>
+  Some features may not work correctly.<br />
+  Report all found bugs to <a href="{feedback_link}" target="_blank">our Telegram bot</a>.
   <Space h="sm" />
-  <Button color="gray" radius="md" size="xs" uppercase on:click={() => {showInExplorer(log_file_path)}}>Открыть папку с логами</Button>
+  <Button color="gray" radius="md" size="xs" uppercase on:click={() => {showInExplorer(log_file_path)}}>Open log folder</Button>
 </Notification>
 
 <Space h="xl" />
 
 {#if settings_saved }
-<Notification title='Настройки сохранены!' icon={Check} color='teal' on:close="{() => {settings_saved = false}}"></Notification>
+<Notification title='Settings saved!' icon={Check} color='teal' on:close="{() => {settings_saved = false}}"></Notification>
 <Space h="xl" />
 {/if}
 
 <Tabs class="form" color='#8AC832' position="left">
-  <Tabs.Tab label='Общее' icon={Gear}>
+  <Tabs.Tab label='General' icon={Gear}>
     <Space h="sm" />
 
     <NativeSelect data={[
-      { label: 'Jarvis ремейк (от Хауди)', value: 'jarvis-remake' },
-      { label: 'Jarvis OG (из фильмов)', value: 'jarvis-og' }
+      { label: 'Jarvis remake (by Houdi)', value: 'jarvis-remake' },
+      { label: 'Jarvis OG (from movies)', value: 'jarvis-og' }
     ]}
-    label="Голос ассистента"
-    description="Не все команды работают со всеми звуковыми пакетами."
+    label="Assistant voice"
+    description="Not all commands work with all sound packages."
     variant="filled"
     bind:value={assistant_voice_val}
    />
   </Tabs.Tab>
-  <Tabs.Tab label='Устройства' icon={Mix}>
+  <Tabs.Tab label='Devices' icon={Mix}>
     <Space h="sm" />
 
     <NativeSelect data={available_microphones}
-    label="Выберите микрофон"
-    description="Его будет слушать ассистент."
+    label="Select microphone"
+    description="The assistant will listen to this microphone."
     variant="filled"
     bind:value={selected_microphone}
    />
   </Tabs.Tab>
-  <Tabs.Tab label='Нейросети' icon={Cube}>
+  <Tabs.Tab label='Neural Networks' icon={Cube}>
     <Space h="sm" />
 
     <NativeSelect data={[
       { label: 'Rustpotter', value: 'rustpotter' },
-      { label: 'Vosk (медленный)', value: 'vosk' },
-      { label: 'Picovoice Porcupine (требует API ключ)', value: 'picovoice' }
+      { label: 'Vosk (slow)', value: 'vosk' },
+      { label: 'Picovoice Porcupine (requires API key)', value: 'picovoice' }
     ]}
-    label="Распознавание активационной фразы (Wake Word)"
-    description="Выберите, какая нейросеть будет отвечать за распознавание активационной фразы."
+    label="Activation Phrase Recognition (Wake Word)"
+    description="Choose which neural network will handle activation phrase recognition."
     variant="filled"
     bind:value={selected_wake_word_engine}
     />
 
     {#if selected_wake_word_engine == "picovoice"}
       <Space h="sm" />
-      <Alert title="Внимание!" color="#868E96" variant="outline">
+      <Alert title="Attention!" color="#868E96" variant="outline">
 
-          <Notification title='Эта нейросеть работает не у всех!' icon={CrossCircled} color='orange' withCloseButton={false}>
-            Мы ждем официального патча от разработчиков.
+          <Notification title='This neural network does not work for everyone!' icon={CrossCircled} color='orange' withCloseButton={false}>
+            We are waiting for an official patch from the developers.
           </Notification>
           <Space h="sm" />
 
           <Text size='sm' color="gray">
-            Введите сюда свой ключ Picovoice.<br />
-            Он выдается бесплатно при регистрации в <a href='https://console.picovoice.ai/' target="_blank">Picovoice Console</a>.<br>
+            Enter your Picovoice key here.<br />
+            It is provided for free when registering on <a href='https://console.picovoice.ai/' target="_blank">Picovoice Console</a>.<br>
           </Text>
           <Space h="sm" />
-          <Input icon={Code} placeholder='Ключ Picovoice' variant='filled' autocomplete="off"  bind:value={api_key__picovoice}/>
+          <Input icon={Code} placeholder='Picovoice Key' variant='filled' autocomplete="off"  bind:value={api_key__picovoice}/>
 
       </Alert>
     {/if}
 
     <Space h="xl" />
 
-    <InputWrapper label="Ключ OpenAI">
-      <!-- <Text size='sm' color="gray">Введите сюда свой ключ OpenAI, он требуется для работы ChatGPT.<br />Получить его можно <a href="https://chat.openai.com/auth/login" target="_blank">на официальном сайте OpenAI</a>.</Text> -->
-      <Text size='sm' color="gray">В данный момент ChatGPT <u>не поддерживается</u>. Он будет добавлен в ближайших обновлениях.</Text>
+    <InputWrapper label="OpenAI Key">
+      <!-- <Text size='sm' color="gray">Enter your OpenAI key here, it is required for ChatGPT to work.<br />You can get it <a href="https://chat.openai.com/auth/login" target="_blank">on the official OpenAI website</a>.</Text> -->
+      <Text size='sm' color="gray">At the moment, ChatGPT is <u>not supported</u>. It will be added in the upcoming updates.</Text>
       <Space h="sm" />
-      <Input icon={Code} placeholder='Ключ OpenAI' variant='filled' autocomplete="off" bind:value={api_key__openai} disabled/>
+      <Input icon={Code} placeholder='OpenAI Key' variant='filled' autocomplete="off" bind:value={api_key__openai} disabled/>
     </InputWrapper>
   </Tabs.Tab>
 </Tabs>
@@ -177,11 +177,11 @@
 <Space h="xl" />
 
 <Button color="lime" radius="md" size="sm" uppercase ripple fullSize on:click={save_settings} disabled={save_button_disabled}>
-  Сохранить
+  Save
 </Button>
 <Space h="sm" />
 <Button color="gray" radius="md" size="sm" uppercase fullSize on:click={() => {$goto('/')}}>
-  Назад
+  Back
 </Button>
 
 <HDivider />

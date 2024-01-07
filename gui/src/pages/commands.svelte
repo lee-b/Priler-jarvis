@@ -10,13 +10,12 @@
 
 <Space h="xl" />
 
-<Notification title='[404] Этот раздел еще находится в разработке!' icon={InfoCircled} color='blue' withCloseButton={false}>
-    Тут будет список команд + полноценный редактор команд.<br>
-    Следите за обновлениями в <a href="{tg_official_link}" target="_blank">нашем телеграм канале</a>!
+<Notification title='[404] This Section Is Still Under Development!' icon={InfoCircled} color='blue' withCloseButton={false}>
+    (not implemented)
 </Notification>
 
 <div style="text-align: center;margin-top: 25px;">
-    <img src="/media/images/tenor.gif" alt="bruh" width="320px">
+    (error)
 </div>
 
 <HDivider />
