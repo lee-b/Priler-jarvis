@@ -43,13 +43,19 @@ But soon, Ukranian and English will be added for the interface, wake-word detect
 
 ## How to build?
 
-Nothing special was used to build this project.<br>
-You need only Rust and NodeJS installed on your system.<br>
-Other than that, all you need is to install all the dependencies and then compile the code with `cargo tauri build` command.<br>
-Or run dev with `cargo tauri dev`.
+First, install dependencies (to do).
 
-<br><br>
-*Thought you might need some of the platform specific libraries for [PvRecorder](https://github.com/Picovoice/pvrecorder) and [Vosk](https://github.com/alphacep/vosk-api).*
+### app
+
+    cd app
+    cargo build
+    cargo run jarvis-app
+
+### gui
+
+    cd gui
+    npm install
+    npm run
 
 ## Author
 
