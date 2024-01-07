@@ -41,7 +41,8 @@ fn main_loop() -> Result<(), ()> {
 
                 // play some greet phrase
                 // @TODO. Make it via commands or upcoming events system.
-                audio::play_sound(&sounds_directory.join(format!("{}.wav", config::ASSISTANT_GREET_PHRASES.choose(&mut rand::thread_rng()).unwrap())));
+
+                // TODO: play config::ASSISTANT_GREET_PHRASES.choose(&mut rand::thread_rng()).unwrap() via text to speech
 
                 // wait for voice commands
                 'voice_recognition: loop {
