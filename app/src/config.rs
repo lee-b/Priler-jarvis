@@ -113,9 +113,8 @@ pub const DEFAULT_KEYWORD: &str = "jarvis_windows.ppn";
 pub const DEFAULT_SENSITIVITY: f32 = 1.0;
 
 // VOSK
-// pub const VOSK_MODEL_PATH: &str = const_concat!(PUBLIC_PATH, "/vosk/model_small");
 pub const VOSK_FETCH_PHRASE: &str = "джарвис";
-pub const VOSK_MODEL_PATH: &str = "vosk/model_small";
+pub const VOSK_MODEL_PATH: &str = "vosk/vosk-model-small-en-us-0.15";
 pub const VOSK_MIN_RATIO: f64 = 70.0;
 
 // ETC
